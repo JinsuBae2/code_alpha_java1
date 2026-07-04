@@ -9,7 +9,9 @@ public class HelloBiodome07 {
         String code;
         code = args[0];
 
-        String print =  h7.codeReturn(code);
+
+        String result = h7.codeReturn(code);
+        System.out.println(result);
 
     }
 
@@ -20,15 +22,38 @@ public class HelloBiodome07 {
             boolean lastWasSpace = false;
 
             for (int i = 0; i < seq.length(); i++) {
-                char ch = seq.charAt(i);
-                if (ch == ' ') {
-                    if (!lastWasSpace) {
-                        cleanedSeq += ch;
-                        lastWasSpace = true;
+                char current = seq.charAt(i);
+
+                if (current == ' ') {
+                    if (i > 0 && seq.charAt(i - 1) == ' ') {
+                        continue;
                     }
+
+                    char prevChar = ' ';
+                    char nextChar = ' ';
+
+                    for (int j = i - 1; j >= 0; j--) {
+                        if (seq.charAt(j) != ' ') {
+                            prevChar = seq.charAt(j);
+                            break;
+                        }
+                    }
+
+                    for (int j = i + 1; j < seq.length(); j++) {
+                        if (seq.charAt(j) != ' ') {
+                            nextChar = seq.charAt(j);
+                            break;
+                        }
+                    }
+
+                    if (prevChar != ' ' && nextChar != ' ' && prevChar == nextChar) {
+                        continue;
+                    }
+
+                    cleanedSeq += current;
+
                 } else {
-                    cleanedSeq += ch;
-                    lastWasSpace = false;
+                    cleanedSeq += current;
                 }
             }
 

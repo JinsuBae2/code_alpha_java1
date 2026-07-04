@@ -18,7 +18,7 @@ public class HelloBiodome08 {
         String[] engDictionary = {
                 "hello", "where", "this", "biodome", "help", "tree", "new", "is",
                 "problem", "please", "need", "we", "isn't", "there", "a", "your",
-                "any", "thanks", "the", "for", "solution", "can", "?"
+                "any", "thanks", "the", "for", "solution", "can", "you"
         };
 
         String[] korDictionary = {
@@ -29,16 +29,16 @@ public class HelloBiodome08 {
         char firstChar = input.charAt(0);
         String result;
 
-        if (firstChar >= 'a' && firstChar <= 'z' || input.contains("?")) {
-            result = processSegmentation(input, engDictionary, false);
+        if ((firstChar >= 'a' && firstChar <= 'z') || input.contains("?")) {
+            result = processSegmentation(input, engDictionary);
         } else {
-            result = processSegmentation(input, korDictionary, true);
+            result = processSegmentation(input, korDictionary);
         }
 
         System.out.println(result);
     }
 
-    public static String processSegmentation(String text, String[] dict, boolean isKorean) {
+    public static String processSegmentation(String text, String[] dict) {
         for (int i = 0; i < dict.length - 1; i++) {
             for (int j = 0; j < dict.length - 1 - i; j++) {
                 if (dict[j].length() < dict[j + 1].length()) {
@@ -54,8 +54,8 @@ public class HelloBiodome08 {
 
         int i = 0;
         int length = text.length();
-
         boolean endsWithQuestion = text.endsWith("?");
+
         if (endsWithQuestion) {
             length--;
         }

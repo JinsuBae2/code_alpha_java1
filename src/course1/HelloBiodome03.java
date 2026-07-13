@@ -1,11 +1,10 @@
 package course1;
 
-import java.util.Arrays;
-
 public class HelloBiodome03 {
-    final static double PI= 3.14;
+    final static double PI = 3.14;
     final static double PRECISION = 0.0000000001;
     final static double COEF = 0.415;
+
     public static void main(String[] args) {
         double temp = 0;
         double hum = 0;
@@ -31,16 +30,14 @@ public class HelloBiodome03 {
         double humTemp = h.abs(hum, temp);
         double lifeIndex = h.lifeIndex(humTemp, oxygen);
 
-        System.out.printf("생명지수 : %.3f\n",lifeIndex);
-
-
+        System.out.printf("생명지수 : %.3f\n", lifeIndex);
 
     }
 
-    public double rootHum(double hum){
-        if (hum == 0) return 0.0;
+    public double rootHum(double hum) {
+        if (hum == 0)
+            return 0.0;
         double x = hum;
-        int cnt = 0;
         while (true) {
             double diff = (x * x) - hum;
             double absDiff = (diff < 0) ? -diff : diff;

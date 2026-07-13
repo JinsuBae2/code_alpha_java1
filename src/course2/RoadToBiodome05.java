@@ -1,7 +1,5 @@
 package course2;
 
-import java.util.Arrays;
-
 public class RoadToBiodome05 {
 
     // 1. 퀵 정렬 (Quick Sort)

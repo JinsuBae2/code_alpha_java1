@@ -3,8 +3,11 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-src/
-.class
+# Compiled class files
+*.class
+
+# Test files
+*Test.java
 
 ### Eclipse ###
 .apt_generated

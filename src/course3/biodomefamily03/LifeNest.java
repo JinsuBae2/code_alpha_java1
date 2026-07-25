@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LifeNest {
-    // 다형성을 위한 Organism 객체 리스트
+    // Organism 객체 리스트
     private List<Organism> organismList;
 
     // 생성자
